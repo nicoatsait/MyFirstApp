@@ -64,4 +64,5 @@ In the "SDK Tools" tab, uncheck the problematic build-tool version.
 Run the following in the CLI: npx react-native run-android
 7. Resources
 You can use the following links for a more in-depth guide to installing React-Native:
-React Native Environment Setup
+1.	You can use the following links for a more in-depth guide to installing React-Native:
+https://reactnative.dev/docs/environment-setup?guide=native&platform=android&os=windows
