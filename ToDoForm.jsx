@@ -1,6 +1,9 @@
 // ToDoForm.jsx
 import React from 'react';
-import { View, TextInput, Button, StyleSheet } from 'react-native';
+import { View, TextInput, Button, StyleSheet, Alert } from 'react-native';
+
+
+
 
 const styles = {
   form: {
@@ -20,16 +23,32 @@ const styles = {
   },
 };
 
-const ToDoForm = () => {
-  return (
-    <View style={styles.form}>
-      <TextInput
-        style={styles.input}
-        placeholder="Add a new task..."
-      />
-      <Button title="Add" />
-    </View>
-  );
+const ToDoForm = ({ onAddTask }) => {
+    
+    const [input, setInput] = React.useState('');
+
+    const handleAddTask = () => {
+        if (input.trim() === '') {
+            Alert.alert('Please enter a task');
+        } else {
+            onAddTask(input);
+            setInput('');
+        }
+        
+        
+    };
+
+    return (
+        <View style={styles.form}>
+            <TextInput
+            style={styles.input}
+            placeholder="Add a new task..."
+            value={input}
+            onChangeText={setInput}
+            />
+            <Button title="Add" onPress={handleAddTask} />
+        </View>
+        );
 };
 
 export default ToDoForm;
