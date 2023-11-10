@@ -1,12 +1,14 @@
 const styles = {
     task: {
-      // your styles here
+        padding: 10,
+        borderBottomWidth: 1,
+        borderColor: '#ccc',
     },
     completed: {
-      // your styles here
+        backgroundColor: '#e0e0e0',
     },
     taskText: {
-      // your styles here
+        fontSize: 16,
     },
   };
   
