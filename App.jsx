@@ -33,19 +33,12 @@ function App() {
   
   const [tasks, setTasks] = React.useState([]);
 
-  const addTask = (task) => {
-    setTasks([...tasks, { title: task }]);
-  };
-
-  const deleteTask = (taskIndex) => {
-    setTasks((prevTasks) => prevTasks.filter((task, index) => index !== taskIndex));
-  };
 
   return (
     <SafeAreaView>
       <Text style={styles.title}>To Do List</Text>
-      <ToDoList tasks={tasks}  onDeleteTask={deleteTask}/>
-      <ToDoForm onAddTask={addTask} />
+      <ToDoList />
+      <ToDoForm />
     </SafeAreaView>
   );
 }

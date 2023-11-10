@@ -19,18 +19,25 @@ const styles = StyleSheet.create ({
     },
   });
   
-  const ToDoList = ({ tasks, onDeleteTask }) => {
+  const ToDoList = () => {
     return (
-      <ScrollView>
-        {tasks && tasks.map((task, index) => (
-            <Pressable key={index}>
-                <View style={styles.task}>
-                    <Text style={styles.taskText}>{task.title}</Text>
-                    <Button title="Delete" onPress={() => onDeleteTask(index)} />
-                </View>
-            </Pressable>
-            ))}
-        </ScrollView>
+      <>
+        <Pressable>
+          <View style={[styles.task, styles.completed]}>
+            <Text style={styles.taskText}>Do laundry</Text>
+          </View>
+        </Pressable>
+        <Pressable>
+          <View style={[styles.task]}>
+            <Text style={styles.taskText}>Go to gym</Text>
+          </View>
+        </Pressable>
+        <Pressable>
+          <View style={[styles.task, styles.completed]}>
+            <Text style={styles.taskText}>Walk dog</Text>
+          </View>
+        </Pressable>
+      </>
     );
   };
   

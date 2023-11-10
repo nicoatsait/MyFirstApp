@@ -24,29 +24,14 @@ const styles = {
 };
 
 const ToDoForm = ({ onAddTask }) => {
-    
-    const [input, setInput] = React.useState('');
-
-    const handleAddTask = () => {
-        if (input.trim() === '') {
-            Alert.alert('Please enter a task');
-        } else {
-            onAddTask(input);
-            setInput('');
-        }
-        
-        
-    };
 
     return (
         <View style={styles.form}>
             <TextInput
-            style={styles.input}
-            placeholder="Add a new task..."
-            value={input}
-            onChangeText={setInput}
+              style={styles.input}
+              placeholder="Add a new task..."
             />
-            <Button title="Add" onPress={handleAddTask} />
+            <Button title="Add" />
         </View>
         );
 };
