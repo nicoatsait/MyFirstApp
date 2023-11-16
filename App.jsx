@@ -41,12 +41,22 @@ function App() {
     ]
     );
 
+  const addTask = (task) => {
+    // Implement the logic to add a new task to the list of tasks
+    if (task) {
+      setTasks([...tasks, task]);
+    } else {
+      alert('Please enter a task');
+    }
+      
+  };
+
 
   return (
     <SafeAreaView>
       <Text style={styles.title}>To Do List</Text>
       <ToDoList tasks={tasks} />
-      <ToDoForm />
+      <ToDoForm addTask={addTask} />
     </SafeAreaView>
   );
 }
